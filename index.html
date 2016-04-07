@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Aethernet Desktop</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/site.css">
+  </head>
+  <body aurelia-app="main">
+    <!-- This is splash screen content that will be
+         overwritten by aurelia once it loads -->
+    <div class="splash">
+      <div class="message">Loading...</div>
+      <i class="fa fa-spinner fa-spin"></i>
+    </div>
+
+    <!-- Include systemjs and its configuration to provide ES6 modules -->
+    <script src="jspm_packages/system.js"></script>
+    <script src="config.js"></script>
+    <script>
+      System.config({ "paths": { "*": "dist-client/*.js" } });
+    </script>
+
+    <!-- Initialize polyfills and start up aurelia -->
+    <script>
+      System.import('core-js').then(function () {
+        System.import('mutationobservers')
+      }).then(function () {
+        System.import('aurelia-bootstrapper');
+      });
+    </script>
+  </body>
+</html>
