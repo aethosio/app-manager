@@ -1,5 +1,6 @@
 import express from 'express';
 import bodyParser from 'body-parser';
+import path from 'path';
 
 const app = express();
 
@@ -24,3 +25,11 @@ app.get('/config.js', (req, res) => {
 
 // Store the app globally for convenience
 global.app = app;
+
+// Start the web server
+var server = app.listen(3000, () => {
+  const host = server.address().address;
+  const port = server.address().port;
+
+  console.log(`Server listening at http://${host}:${port}`);
+});
