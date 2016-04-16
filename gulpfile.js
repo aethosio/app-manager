@@ -83,9 +83,23 @@ gulp.task('build', function(callback) {
 gulp.task('nodemon', ['build'], function () {
   nodemon({
     watch: ['./src-client', './src-server'],
-    ext: 'js',
+    ext: 'js,html',
     script: './dist-server/server.js',
     tasks: ['build']
+  });
+});
+
+/*
+  Task to start up the server in debug mode with nodemon and
+  rebuild/restart if any source changes
+ */
+gulp.task('debug', ['build'], function () {
+  nodemon({
+    watch: ['./src-client', './src-server'],
+    ext: 'js,html',
+    script: './dist-server/server.js',
+    tasks: ['build'],
+    env: { 'DEBUG' : 'server,express:*' }
   });
 });
 
