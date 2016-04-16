@@ -1,7 +1,21 @@
 <template>
+  <require from="../../assets/css/site.css"></require>
   <h1>Aethernet Desktop</h1>
 
   <p>This is where you would normally see the Aethernet Desktop
     icons and such.
   </p>
-</template>
+  <div class="card-deck-wrapper">
+    <div class="row au-stagger">
+      <div class="col-xs-3 col-sm-2 col-md-1 card-deck" repeat.for="icon of icons">
+        <div class="card">
+          <img class="card-img-top img-responsive" src.bind="'/shared/icons/' + icon.icon_url" />
+          <span if.bind="icon.notifications" class="badge badge-notify">${icon.notifications}</span>
+          <div class="card-block">
+            <p class="card-text">${icon.name}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </template>

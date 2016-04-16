@@ -10,17 +10,19 @@
     "type": "git",
     "url": "git+https://github.com/aethernetio/app-manager.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Indie Zen LLC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/aethernetio/app-manager/issues"
   },
   "homepage": "https://github.com/aethernetio/app-manager#readme",
   "dependencies": {
-    "express": "^4.12.4",
+    "aethernet-app-container-client": "file:../aethernet-app-container-client",
+    "aethernet-service-registry-client": "file:../aethernet-service-registry-client",
     "body-parser": "^1.12.4",
-    "mongoose": "^4.0.3",
-    "require-dir": "^0.3.0"
+    "express": "^4.12.4",
+    "require-dir": "^0.3.0",
+    "thalassa": "^0.4.1"
   },
   "devDependencies": {
     "babel": "^5.8.23",

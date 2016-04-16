@@ -23,7 +23,7 @@ export class App {
   constructor (router) {
     this.router = router;
     this.router.configure(config => {
-      config.title = 'Athernet Desktop';
+      config.title = 'Aethernet Desktop';
       config.map([
         { route : ['', 'desktop'], moduleId : './pages/desktop' }
       ]);

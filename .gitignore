@@ -37,4 +37,4 @@ jspm_packages
 dist*
 
 # Aethernet config
-aetherconfig.js
+aetherconfig.js*
