@@ -13,4 +13,30 @@ router.get( (req, res) => {
 
 });
 
+router.post('/:app', (req, res) => {
+  // Get the command, which for now is simply "open"
+  const command = req.params.command;
+
+
+});
+
+class AppManager {
+  constructor() {
+
+  }
+
+  handleCommand(command, req, res) {
+    if (['open'].indexof(command) >= 0) {
+      return this[command](req, res);
+    }
+  }
+
+  open(req, res) {
+
+  }
+}
+
+// TODO Use a plugin system to construct this
+global.appmanager = new AppManager();
+
 // TODO Add REST API for applications.

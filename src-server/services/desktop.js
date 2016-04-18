@@ -38,29 +38,5 @@ router.get('/icons', (req, res) => {
     notifications: 0
   });
 
-  icons.push({
-    icon_url: "advancedsettings.png",
-    name: "Settings",
-    notifications: 0
-  });
-
-  icons.push({
-    icon_url: "addressbook.png",
-    name: "Addresses",
-    notifications: 0
-  });
-
-  icons.push({
-    icon_url: "schedule.png",
-    name: "Calendar",
-    notifications: 0
-  });
-
-  icons.push({
-    icon_url: "graphics.png",
-    name: "Draw",
-    notifications: 0
-  });
-
   res.send(icons);
 });
