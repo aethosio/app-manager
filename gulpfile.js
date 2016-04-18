@@ -8,13 +8,14 @@ var assign = Object.assign || require('object.assign');
 var del = require('del');
 var vinylPaths = require('vinyl-paths');
 var nodemon = require('gulp-nodemon');
+var sass = require('gulp-sass');
 
 /*
   Task to clean up the dist-client and dist-server
   directories
  */
 gulp.task('clean', function() {
-  return gulp.src(['dist-client/', 'dist-server'])
+  return gulp.src(['dist-client/', 'dist-server', 'assets/css'])
     .pipe(vinylPaths(del));
 });
 
@@ -60,6 +61,16 @@ gulp.task('build-client-js', function () {
     .pipe(gulp.dest('dist-client/'));
 });
 
+
+/*
+  Compile sass into CSS
+ */
+gulp.task('sass', function() {
+    return gulp.src("scss/*.scss")
+        .pipe(sass())
+        .pipe(gulp.dest("assets/css"));
+});
+
 /*
   Task to copy client html files from src to dist
  */
@@ -73,7 +84,7 @@ gulp.task('build-client-html', function () {
   Task to clean and build the entire application
  */
 gulp.task('build', function(callback) {
-  return runSequence('clean', ['build-server-js', 'build-client-js', 'build-client-html'], callback);
+  return runSequence('clean', ['build-server-js', 'sass', 'build-client-js', 'build-client-html'], callback);
 });
 
 /*
@@ -82,8 +93,8 @@ gulp.task('build', function(callback) {
  */
 gulp.task('nodemon', ['build'], function () {
   nodemon({
-    watch: ['./src-client', './src-server'],
-    ext: 'js,html',
+    watch: ['./src-client', './src-server', 'scss'],
+    ext: 'js,html,scss',
     script: './dist-server/server.js',
     tasks: ['build']
   });
@@ -95,8 +106,8 @@ gulp.task('nodemon', ['build'], function () {
  */
 gulp.task('debug', ['build'], function () {
   nodemon({
-    watch: ['./src-client', './src-server'],
-    ext: 'js,html',
+    watch: ['./src-client', './src-server', 'scss'],
+    ext: 'js,html,scss',
     script: './dist-server/server.js',
     tasks: ['build'],
     env: { 'DEBUG' : 'server,express:*' }

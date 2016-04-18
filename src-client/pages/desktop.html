@@ -1,18 +1,22 @@
 <template>
   <require from="../../assets/css/site.css"></require>
-  <h1>Aethernet Desktop</h1>
 
-  <p>This is where you would normally see the Aethernet Desktop
-    icons and such.
-  </p>
+  <h1 class="text-center">Aethernet Desktop</h1>
+
   <div class="card-deck-wrapper">
     <div class="row au-stagger">
       <div class="col-xs-3 col-sm-2 col-md-1 card-deck" repeat.for="icon of icons">
         <div class="card">
-          <img class="card-img-top img-responsive" src.bind="'/shared/icons/' + icon.icon_url" />
-          <span if.bind="icon.notifications" class="badge badge-notify">${icon.notifications}</span>
-          <div class="card-block">
-            <p class="card-text">${icon.name}</p>
+          <a href="#" click.delegate="$parent.launchApp($event, icon.app_name)"
+              mouseover.delegate="$parent.icon.enter($event);"
+              mousemove.delegate="$parent.icon.move($event);"
+              mouseout.delegate="$parent.icon.leave($event);"
+              >
+            <img class="card-img-top img-responsive" src.bind="'/shared/icons/' + icon.icon_url" />
+          </a>
+          <span if.bind="icon.notifications" class="badge desktop-icon-notify">${icon.notifications}</span>
+          <div class="card-block desktop-icon-block">
+            <p class="card-text desktop-icon-text">${icon.app_name}</p>
           </div>
         </div>
       </div>

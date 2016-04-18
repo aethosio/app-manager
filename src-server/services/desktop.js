@@ -14,29 +14,67 @@ router.get('/icons', (req, res) => {
   var icons = [];
 
   // TODO Don't hard-code these
-  icons.push({
-    icon_url: "advancedsettings.png",
-    name: "Settings",
-    notifications: 0
-  });
 
   icons.push({
     icon_url: "addressbook.png",
-    name: "Addresses",
+    app_name: "Addresses",
     notifications: 1
   });
 
   icons.push({
     icon_url: "schedule.png",
-    name: "Calendar",
+    app_name: "Calendar",
     notifications: 0
   });
 
   icons.push({
     icon_url: "graphics.png",
-    name: "Draw",
+    app_name: "Draw",
     notifications: 0
   });
+
+  icons.push({
+    icon_url: "MetaZen.png",
+    app_name: "MetaZen Editor",
+    notifications: 0
+  });
+
+  icons.push({
+    icon_url: "calc.png",
+    app_name: "Calculator",
+    notifications: 0
+  });
+
+  icons.push({
+    icon_url: "cookbook.png",
+    app_name: "Cook Book",
+    notifications: 0
+  });
+
+  icons.push({
+    icon_url: "book.png",
+    app_name: "Encyclopedia",
+    notifications: 0
+  });
+
+  icons.push({
+    icon_url: "books.png",
+    app_name: "Book Library",
+    notifications: 0
+  });
+
+  icons.push({
+    icon_url: "filemanager.png",
+    app_name: "File Manager",
+    notifications: 0
+  });
+
+  icons.push({
+    icon_url: "advancedsettings.png",
+    app_name: "Settings",
+    notifications: 0
+  });
+
 
   res.send(icons);
 });

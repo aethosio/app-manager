@@ -1,7 +1,8 @@
 .splash {
   text-align: center;
   margin: 10% 0 0 0;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 .splash .message {
   font-size: 72px;
@@ -9,27 +10,32 @@
   color: black;
   text-shadow: rgba(0, 0, 0, 0.5) 0 0 15px;
   text-transform: uppercase;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
 
 .splash .fa-spinner {
   text-align: center;
   display: inline-block;
   color: white;
   font-size: 72px;
-  margin-top: 50px; }
+  margin-top: 50px;
+}
 
-.desktop-icon-notify {
-  background-color: red;
-  position: absolute;
+.desktop-icon-notify{
+  background-color:red;
+  position:absolute;
   bottom: 40px;
   right: 0px;
   padding: 5px;
-  border-radius: 5px 20px/30px 20px; }
+  border-radius: 5px 20px/30px 20px;
+}
 
 .desktop-icon-block {
-  vertical-align: middle; }
+  vertical-align: middle;
+}
 
 .desktop-icon-text {
   text-align: center;
   vertical-align: middle;
-  min-height: 40px; }
+  min-height: 40px;
+}

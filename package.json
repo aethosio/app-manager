@@ -21,6 +21,7 @@
     "aethernet-service-registry-client": "file:../aethernet-service-registry-client",
     "body-parser": "^1.12.4",
     "express": "^4.12.4",
+    "gulp-sass": "^2.2.0",
     "require-dir": "^0.3.0",
     "thalassa": "^0.4.1"
   },
