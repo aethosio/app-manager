@@ -1,25 +1,26 @@
 <template>
-  <require from="../../assets/css/site.css"></require>
 
-  <h1 class="text-center">Aethernet Desktop</h1>
+  <section>
+    <h2>${heading}</h2>
 
-  <div class="card-deck-wrapper">
-    <div class="row au-stagger">
-      <div class="col-xs-3 col-sm-2 col-md-1 card-deck" repeat.for="icon of icons">
-        <div class="card">
-          <a href="#" click.delegate="$parent.launchApp($event, icon.app_name)"
-              mouseover.delegate="$parent.icon.enter($event);"
-              mousemove.delegate="$parent.icon.move($event);"
-              mouseout.delegate="$parent.icon.leave($event);"
-              >
-            <img class="card-img-top img-responsive" src.bind="'/shared/icons/' + icon.icon_url" />
-          </a>
-          <span if.bind="icon.notifications" class="badge desktop-icon-notify">${icon.notifications}</span>
-          <div class="card-block desktop-icon-block">
-            <p class="card-text desktop-icon-text">${icon.app_name}</p>
+    <div class="card-deck-wrapper">
+      <div class="row au-stagger">
+        <div class="col-xs-3 col-sm-2 col-md-1 card-deck" repeat.for="icon of icons">
+          <div class="card">
+            <a href="#" click.delegate="$parent.launchApp($event, icon.app_id)"
+                mouseover.delegate="$parent.icon.enter($event);"
+                mousemove.delegate="$parent.icon.move($event);"
+                mouseout.delegate="$parent.icon.leave($event);"
+                >
+              <img class="card-img-top img-responsive" src.bind="'/shared/icons/' + icon.icon_url" />
+            </a>
+            <span if.bind="icon.notifications" class="badge desktop-icon-notify">${icon.notifications}</span>
+            <div class="card-block desktop-icon-block">
+              <p class="card-text desktop-icon-text">${icon.app_name}</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  </template>
+  </section>
+</template>

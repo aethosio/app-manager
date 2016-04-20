@@ -1,12 +1,3 @@
-/* eslint-disable */
-import { inject } from 'aurelia-framework';
-import { Router } from 'aurelia-router';
-import bootstrap from 'bootstrap';
-import 'fetch';
-import 'babel/polyfill';
-
-/* eslint-enable */
-
 /*
   This is the view model for our root application view
   This view model defines variables for the outer shell of
@@ -14,19 +5,16 @@ import 'babel/polyfill';
   between child pages rendered in the <router-view> on the
   corresponding view
  */
-@inject(Router)
 export class App {
 
-  // The constructor takes in the singleton instanced router
-  // from the framework (specified by the @inject) and configures it
-  // with the routes that we want for the "pages" in our application
-  constructor (router) {
+  configureRouter(config, router) {
+    config.title = "Aethernet";
+
+    config.map([
+      { route: ['', 'desktop'], moduleId : './pages/desktop', nav: false,  title:'Desktop'},
+      { route: 'settings',  name: 'settings', moduleId: './pages/settings', nav: true, title:'Settings' }
+    ]);
+
     this.router = router;
-    this.router.configure(config => {
-      config.title = 'Aethernet Desktop';
-      config.map([
-        { route : ['', 'desktop'], moduleId : './pages/desktop' }
-      ]);
-    });
   }
 }

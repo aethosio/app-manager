@@ -7,16 +7,10 @@ LogManager.setLevel(LogManager.logLevel.debug);
 
 // Setup aurelia configuration
 export function configure (aurelia) {
-  aurelia
-    .use
-    .defaultBindingLanguage()
-    .defaultResources()
-    .router()
-    .eventAggregator()
-    .history()
-    .plugin('aurelia-html-import-template-loader')
-    .globalResources();
+  aurelia.use
+    .standardConfiguration()
+    .developmentLogging();
 
   // Start aurelia by mounting app.js/app.html as the root
-  aurelia.start().then(a => a.setRoot('app', document.body));
+  aurelia.start().then(() => aurelia.setRoot());
 }

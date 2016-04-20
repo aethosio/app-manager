@@ -110,7 +110,7 @@ gulp.task('debug', ['build'], function () {
     ext: 'js,html,scss',
     script: './dist-server/server.js',
     tasks: ['build'],
-    env: { 'DEBUG' : 'server,express:*' }
+    env: { 'DEBUG' : 'aether:*,server,express:*' }
   });
 });
 

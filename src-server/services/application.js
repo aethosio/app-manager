@@ -13,11 +13,13 @@ router.get( (req, res) => {
 
 });
 
-router.post('/:app', (req, res) => {
+router.post('/:app_id', (req, res) => {
   // Get the command, which for now is simply "open"
-  const command = req.params.command;
+  const app_id = req.params.app_id;
+  const command = req.body.command;
 
-
+  debug(command + " " + app_id);
+  global.appManager.handleCommand(command, req, res);
 });
 
 class AppManager {
@@ -26,17 +28,17 @@ class AppManager {
   }
 
   handleCommand(command, req, res) {
-    if (['open'].indexof(command) >= 0) {
+    if (['open'].indexOf(command) >= 0) {
       return this[command](req, res);
     }
   }
 
   open(req, res) {
-
+    res.send({status: "ok"});
   }
 }
 
 // TODO Use a plugin system to construct this
-global.appmanager = new AppManager();
+global.appManager = new AppManager();
 
 // TODO Add REST API for applications.
