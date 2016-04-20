@@ -48,3 +48,14 @@ section {
   text-align: center;
   vertical-align: middle;
   min-height: 40px; }
+
+.status-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAHElEQVQIW2NkYGDwYWBg2AKjGRkgAC4IEsCvAgDavgadjG7DXAAAAABJRU5ErkJggg==);
+  padding: 8px 8px;
+  border-style: groove;
+  border-width: 3px 0px 0px 0px;
+  border-color: #FFFFFF; }

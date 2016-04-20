@@ -35,7 +35,6 @@ export class Desktop {
   }
 }
 
-
 /*
  * IconHandler class
  *

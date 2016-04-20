@@ -6,6 +6,7 @@
 -->
 <template>
   <require from="nav-bar.html"></require>
+  <require from="status-bar"></require>
   <!-- These tags let us include third-party css files from JSPM packages
        without needing to worry about the version part of the path
        that can change as we update to new version of our libraries  -->
@@ -19,4 +20,5 @@
   <div class="page-host">
     <router-view></router-view>
   </div>
+  <status-bar></status-bar>
 </template>
