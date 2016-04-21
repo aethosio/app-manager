@@ -2,7 +2,6 @@ import {inject} from 'aurelia-framework';
 import {HttpClient, json} from 'aurelia-fetch-client';
 import 'fetch';
 
-
 @inject(HttpClient)
 export class Desktop {
   constructor(http) {

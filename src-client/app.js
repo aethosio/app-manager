@@ -5,13 +5,17 @@
   between child pages rendered in the <router-view> on the
   corresponding view
  */
- import { inject } from 'aurelia-framework';
- import { EventAggregator } from 'aurelia-event-aggregator';
+import { inject } from 'aurelia-framework';
+import { EventAggregator } from 'aurelia-event-aggregator';
+import { StatusBarPublisher } from 'status';
+import { LogPublisher } from 'logger';
 
- @inject(EventAggregator)
+@inject(EventAggregator, StatusBarPublisher, LogPublisher)
 export class App {
-  constructor(eventQueue) {
+  constructor(eventQueue, statusBar, logger) {
     this.eventQueue = eventQueue;
+    this.statusBar = statusBar;
+    this.logger = logger;
   }
 
   configureRouter(config, router) {
@@ -27,7 +31,10 @@ export class App {
 
   attached() {
     setTimeout(() => {
-      this.eventQueue.publish('status', 'Ready');
+      this.statusBar.setStatus('Ready');
+      this.logger.log('Aether OS finished booting and ready for user interaction.');
     }, 10*1000);
+
+    this.logger.log('Booting...');
   }
 }

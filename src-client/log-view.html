@@ -1,0 +1,14 @@
+<template>
+  <div class="log-view">
+    <table class="table table-condensed table-striped table-hover">
+      <thead>
+        <th>Text</th>
+      </thead>
+      <tbody>
+        <tr repeat.for="entry of log">
+          <td>${entry}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</template>

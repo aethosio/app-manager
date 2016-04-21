@@ -7,6 +7,8 @@
 <template>
   <require from="nav-bar.html"></require>
   <require from="status-bar"></require>
+  // TODO Eventually the log view needs to go in a separate view
+  <require from="log-view"></require>
   <!-- These tags let us include third-party css files from JSPM packages
        without needing to worry about the version part of the path
        that can change as we update to new version of our libraries  -->
@@ -20,5 +22,6 @@
   <div class="page-host">
     <router-view></router-view>
   </div>
+  <log-view></log-view>
   <status-bar></status-bar>
 </template>

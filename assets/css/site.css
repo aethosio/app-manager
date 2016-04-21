@@ -49,6 +49,16 @@ section {
   vertical-align: middle;
   min-height: 40px; }
 
+.log-view {
+  position: fixed;
+  bottom: 40px;
+  left: 0;
+  right: 0;
+  padding: 8px 8px;
+  border-style: groove;
+  border-width: 3px 0px 0px 0px;
+  border-color: #FFFFFF; }
+
 .status-bar {
   position: fixed;
   bottom: 0;
