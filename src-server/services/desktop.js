@@ -16,10 +16,25 @@ router.get('/icons', (req, res) => {
   // TODO Don't hard-code these
 
   icons.push({
-    icon_url: "addressbook.png",
+    icon_url: "zen-icon.jpg",
+    app_name: "Zen Studio",
+    app_id: "app-zen-studio",
+    notifications: 0,
+    routerConfig:   {
+          route: 'zen-studio',
+          name: 'zen-studio',
+          moduleId: '../shared/apps/client/app-zen-studio/0.0.1/zen-studio',
+          nav: false,
+          title:'Zen Studio'
+      }
+
+  });
+
+  icons.push({
+    icon_url: "desktopshare.png",
     app_name: "Hello World",
     app_id: "app-hello-world",
-    notifications: 1,
+    notifications: 0,
     routerConfig:   {
           route: 'hello/:params',
           name: 'hello',

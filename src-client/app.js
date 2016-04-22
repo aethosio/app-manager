@@ -19,7 +19,7 @@ export class App {
   }
 
   configureRouter(config, router) {
-    config.title = "Aethernet";
+    config.title = "AethOS Desktop";
 
     config.map([
       { route: ['', 'desktop'], moduleId : './pages/desktop', nav: false,  title:'Desktop'},
@@ -33,7 +33,7 @@ export class App {
   attached() {
     setTimeout(() => {
       this.statusBar.setStatus('Ready');
-      this.logger.log('Aether OS finished booting and ready for user interaction.');
+      this.logger.log('AethOS finished booting and ready for user interaction.');
     }, 10*1000);
 
     this.logger.log('Booting...');

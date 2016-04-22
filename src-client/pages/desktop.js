@@ -31,8 +31,21 @@ export class Desktop {
             this.router.addRoute(icon.routerConfig);
           }
         }
+        // TODO Possibly make a Map using app_id as the key
         this.icons = icons;
       });
+  }
+
+  findRouteByAppId(app_id) {
+    for(let icon of this.icons) {
+      if(icon.app_id === app_id) {
+        if(icon.routerConfig) {
+          return icon.routerConfig.route;
+        } else {
+          return null;
+        }
+      }
+    }
   }
 
   launchApp(event, app_id) {
@@ -42,10 +55,12 @@ export class Desktop {
         {method: 'post', body:json({ command: "open"}) })
       .then(response => response.json())
       .then(body => {
-        // HACK Hard-coded route
-        // , {message: 'Hello, world!'}
-        this.router.navigate('hello/test');
+        let route = this.findRouteByAppId(app_id);
         console.log(body);
+        console.log(route);
+        if(route) {
+          this.router.navigate(route);
+        }
       });
   }
 }
@@ -59,7 +74,6 @@ class IconHandler {
 
   enter(event) {
     // Nothing special here
-    console.log(event);
   }
 
   move(event) {
