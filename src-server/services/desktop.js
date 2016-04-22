@@ -17,6 +17,21 @@ router.get('/icons', (req, res) => {
 
   icons.push({
     icon_url: "addressbook.png",
+    app_name: "Hello World",
+    app_id: "app-hello-world",
+    notifications: 1,
+    routerConfig:   {
+          route: 'hello/:params',
+          name: 'hello',
+          moduleId: '../shared/apps/client/app-hello-world/0.0.1/hello-world',
+          nav: false,
+          title:'Hello!'
+      }
+
+  });
+
+  icons.push({
+    icon_url: "addressbook.png",
     app_name: "Addresses",
     app_id: "addresses",
     notifications: 1

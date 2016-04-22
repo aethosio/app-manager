@@ -24,6 +24,7 @@ export class App {
     config.map([
       { route: ['', 'desktop'], moduleId : './pages/desktop', nav: false,  title:'Desktop'},
       { route: 'settings',  name: 'settings', moduleId: './pages/settings', nav: true, title:'Settings' }
+
     ]);
 
     this.router = router;

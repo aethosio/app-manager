@@ -1,10 +1,12 @@
 import {inject} from 'aurelia-framework';
+import {Router} from 'aurelia-router';
 import {HttpClient, json} from 'aurelia-fetch-client';
 import 'fetch';
 
-@inject(HttpClient)
+@inject(Router, HttpClient)
 export class Desktop {
-  constructor(http) {
+  constructor(router, http) {
+    this.router = router;
     this.icon = new IconHandler();
     http.configure(config => {
       config
@@ -21,7 +23,16 @@ export class Desktop {
   activate() {
     return this.http.fetch('/desktop/icons')
       .then(response => response.json())
-      .then(icons => this.icons = icons);
+      .then(icons => {
+        // TODO Call this.router.addRoute() to add routes for each of these
+        // icons.
+        for(let icon of icons) {
+          if('routerConfig' in icon) {
+            this.router.addRoute(icon.routerConfig);
+          }
+        }
+        this.icons = icons;
+      });
   }
 
   launchApp(event, app_id) {
@@ -30,7 +41,12 @@ export class Desktop {
     return this.http.fetch('/applications/' + app_id,
         {method: 'post', body:json({ command: "open"}) })
       .then(response => response.json())
-      .then(body => console.log(body));
+      .then(body => {
+        // HACK Hard-coded route
+        // , {message: 'Hello, world!'}
+        this.router.navigate('hello/test');
+        console.log(body);
+      });
   }
 }
 
@@ -43,6 +59,7 @@ class IconHandler {
 
   enter(event) {
     // Nothing special here
+    console.log(event);
   }
 
   move(event) {
