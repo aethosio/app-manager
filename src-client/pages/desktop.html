@@ -8,9 +8,9 @@
         <div class="col-xs-3 col-sm-2 col-md-1 card-deck" repeat.for="icon of icons">
           <div class="card">
             <a href="#" click.delegate="$parent.launchApp($event, icon.app_id)"
-                mouseover.delegate="$parent.icon.enter($event);"
-                mousemove.delegate="$parent.icon.move($event);"
-                mouseout.delegate="$parent.icon.leave($event);"
+                mouseover.delegate="$parent.icon.enter($event)"
+                mousemove.delegate="$parent.icon.move($event)"
+                mouseout.delegate="$parent.icon.leave($event)"
                 >
               <img class="card-img-top img-responsive" src.bind="'/shared/icons/' + icon.icon_url" />
             </a>
