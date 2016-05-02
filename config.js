@@ -14,6 +14,9 @@ System.config({
   },
 
   map: {
+    "three.js": "/usr/lib/three.min.js",
+    "aurelia-dock-css": "/shared/apps/client/aurelia-dock/0.0.1/css",
+    "aurelia-dock": "/usr/lib/aurelia-dock/0.0.1",
     "aurelia-animator-css": "npm:aurelia-animator-css@1.0.0-beta.1.2.0",
     "aurelia-bootstrapper": "npm:aurelia-bootstrapper@1.0.0-beta.1.2.0",
     "aurelia-event-aggregator": "npm:aurelia-event-aggregator@1.0.0-beta.1.2.0",

@@ -23,6 +23,7 @@ app.use('/assets', express.static(`${__dirname}/../assets`));
 
 // TODO Shared assets should probably come from a shared file service.
 app.use('/shared', express.static(`${global.aether.config["shared"]}`))
+
 app.use('/usr/lib', express.static(`${global.aether.config["shared"]}/usr/lib`))
 
 // Any request without a path should render index.html

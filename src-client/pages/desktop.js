@@ -14,7 +14,7 @@ export class Desktop {
         .withDefaults({
           headers: { 'Accept' : 'application/json' }
         })
-        .withBaseUrl('http://localhost:3000/api');
+        .withBaseUrl('/api');
     });
 
     this.http = http;

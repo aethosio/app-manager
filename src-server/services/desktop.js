@@ -46,6 +46,20 @@ router.get('/icons', (req, res) => {
   });
 
   icons.push({
+    icon_url: "riddick.jpg",
+    app_name: "Keldata",
+    app_id: "keldata",
+    notifications: 0,
+    routerConfig:   {
+          route: 'keldata',
+          name: 'keldata',
+          moduleId: '../shared/apps/client/keldata/0.0.1/keldata-game',
+          nav: false,
+          title:'Keldata: Chronicles of Kiraan'
+      }
+  });
+
+  icons.push({
     icon_url: "addressbook.png",
     app_name: "Addresses",
     app_id: "addresses",
